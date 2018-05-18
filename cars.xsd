@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="cars">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="car" minOccurs="1" maxOccurs="100"/><!-- dla odmiany ograniczenie wystąpień od 1 do 100 -->
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="car">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="brand"/>
+				<xsd:element ref="name"/>
+				<xsd:element ref="fuel"/>
+				<xsd:element name="color" type="xsd:string"/>
+				<xsd:element ref="equipment"/>
+			</xsd:sequence>
+			<xsd:attribute ref="type" use="optional" default="NA"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:attribute name="type">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="NA"/>
+				<xsd:enumeration value="coupe"/>
+				<xsd:enumeration value="hatchback"/>
+				<xsd:enumeration value="sedan"/>
+				<xsd:enumeration value="sport"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+	
+	<xsd:element name="brand" type="xsd:string"/>
+	<xsd:element name="name" type="typ_nawyauta"/>
+	
+	<xsd:simpleType name="typ_nawyauta">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z][A-Za-z0-9 ]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:element name="fuel">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="benzyna"/>
+				<xsd:enumeration value="diesel"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	
+	<xsd:element name="equipment">
+		<xsd:complexType>
+			<xsd:attribute ref="added" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	
+	<xsd:attribute name="added" default="no">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="no"/>
+				<xsd:enumeration value="yes"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+</xsd:schema>

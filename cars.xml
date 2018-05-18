@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cars xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cars.xsd">
+	<car type="sport">
+		<brand>Audi</brand>
+		<name>RS</name>
+		<fuel>diesel</fuel>
+		<color>red</color>
+		<equipment added="no"/>
+	</car>
+	<car type="sedan">
+		<brand>BMW</brand>
+		<name>M3 GT</name>
+		<fuel>benzyna</fuel>
+		<color>silver</color>
+		<equipment added="no"/>
+	</car>
+	<car type="coupe">
+		<brand>VW</brand>
+		<name>Passat</name>
+		<fuel>benzyna</fuel>
+		<color>black</color>
+		<equipment added="yes"/>
+	</car>
+	<car type="hatchback">
+		<brand>Opel</brand>
+		<name>Astra</name>
+		<fuel>diesel</fuel>
+		<color>grey</color>
+		<equipment added="no"/>
+	</car>
+	<car type="sport">
+		<brand>Mitsubishi</brand>
+		<name>Lancer</name>
+		<fuel>benzyna</fuel>
+		<color>yellow</color>
+		<equipment added="yes"/>
+	</car>
+</cars>
